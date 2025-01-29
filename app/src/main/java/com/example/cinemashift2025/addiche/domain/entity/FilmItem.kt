@@ -1,31 +1,28 @@
-package com.example.cinemashift2025.data.model
+package com.example.cinemashift2025.addiche.domain.entity
 
 import java.math.BigInteger
 
-data class FilmItemModel(
+data class FilmItem(
     val id: BigInteger,
     val name: String,
     val originalName: String,
     val description: String,
     val releaseDate: String,
-    val actors: Array<FilmStafModel>,
-    val directors: Array<FilmStafModel>,
+    val actors: List<FilmStaf>,
+    val directors: List<FilmStaf>,
     val runtime: Int,
-    val ageRating: AgeRatings,
-    val geners: Array<String>,
+    val ageRating: String,
+    val geners: List<String>,
     val userRatings: UserRatings,
     val img: String,
     val country: Country
-
 )
 
-enum class AgeRatings {
-    G,
-    PG,
-    PG13,
-    R,
-    NC17
-}
+data class FilmStaf (
+    val id: Int,
+    val professions: String,
+    val fullName: String
+)
 
 data class UserRatings(
     val kinopoisk: String,
