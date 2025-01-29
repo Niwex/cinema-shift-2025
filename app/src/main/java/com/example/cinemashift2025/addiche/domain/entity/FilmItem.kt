@@ -3,7 +3,7 @@ package com.example.cinemashift2025.addiche.domain.entity
 import java.math.BigInteger
 
 data class FilmItem(
-    val id: BigInteger,
+    val id: Long,
     val name: String,
     val originalName: String,
     val description: String,
@@ -19,7 +19,7 @@ data class FilmItem(
 )
 
 data class FilmStaf (
-    val id: Int,
+    val id: Long,
     val professions: String,
     val fullName: String
 )
@@ -33,5 +33,5 @@ data class Country(
     val name: String,
     val code: String,
     val code2: String,
-    val id: Int
+    val id: Long
 )

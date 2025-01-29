@@ -8,7 +8,7 @@ import com.example.cinemashift2025.addiche.domain.entity.Country
 import java.math.BigInteger
 
 data class FilmItemModel(
-    val id: BigInteger,
+    val id: Long,
     val name: String,
     val originalName: String,
     val description: String,
@@ -40,6 +40,6 @@ data class CountryModel(
     val name: String,
     val code: String,
     val code2: String,
-    val id: Int
+    val id: Long
 )
 

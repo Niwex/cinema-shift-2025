@@ -7,5 +7,5 @@ interface AfficheState {
     data object Initial : AfficheState
     data object Loading : AfficheState
     data class  Failure(val messege: String?) : AfficheState
-    data class  Content(val Films: List<FilmItem>) : AfficheState
+    data class  Content(val films: List<FilmItem>) : AfficheState
 }
