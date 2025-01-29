@@ -60,6 +60,12 @@ dependencies {
     implementation (libs.converter.gson)
     implementation(libs.okhttp.logginginterceptor)
 
+//    навигация
+    implementation(libs.androidx.navigation.compose)
+
+//   coroutines
+    implementation(libs.kotlinx.coroutines.android)
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
