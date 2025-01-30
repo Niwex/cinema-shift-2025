@@ -21,7 +21,7 @@ import com.example.cinemashift2025.addiche.presentation.AfficheState
 @Composable
 fun AfficheScreen(
     afficheViewModel: AfficheViewModel,
-    onItemSelected: (filmID: Long)-> Unit,
+    onItemSelected: (filmID: String)-> Unit,
 ) {
 
     val afficheState by afficheViewModel.state.collectAsState()
@@ -35,7 +35,7 @@ fun AfficheScreen(
 
 
 @Composable
-fun AfficheStateStateless(state: AfficheState, afficheViewModel: AfficheViewModel, onItemSelected: (filmID: Long)-> Unit) {
+fun AfficheStateStateless(state: AfficheState, afficheViewModel: AfficheViewModel, onItemSelected: (filmID: String)-> Unit) {
 
     Column(
         modifier = Modifier.fillMaxSize()

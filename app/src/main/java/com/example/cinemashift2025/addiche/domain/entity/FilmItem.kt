@@ -1,37 +1,14 @@
 package com.example.cinemashift2025.addiche.domain.entity
 
-import java.math.BigInteger
-
 data class FilmItem(
-    val id: Long,
+    val id: String,
     val name: String,
-    val originalName: String,
-    val description: String,
     val releaseDate: String,
-    val actors: List<FilmStaf>,
-    val directors: List<FilmStaf>,
     val runtime: Int,
     val ageRating: String,
-    val geners: List<String>,
-    val userRatings: UserRatings,
+    val genres: List<String> = listOf(),
+    val kinopoiskRaiting: Float,
     val img: String,
-    val country: Country
+    val countryName: String
 )
 
-data class FilmStaf (
-    val id: Long,
-    val professions: String,
-    val fullName: String
-)
-
-data class UserRatings(
-    val kinopoisk: String,
-    val imdb: String,
-)
-
-data class Country(
-    val name: String,
-    val code: String,
-    val code2: String,
-    val id: Long
-)

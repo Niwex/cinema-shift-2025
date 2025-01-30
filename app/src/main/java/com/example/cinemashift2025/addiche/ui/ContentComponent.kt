@@ -16,7 +16,7 @@ import com.example.cinemashift2025.addiche.domain.entity.FilmItem
 
 
 @Composable
-fun ContentComponent(films: List<FilmItem>, onItemClicked:(itemID: Long) -> Unit) {
+fun ContentComponent(films: List<FilmItem>, onItemClicked:(itemID: String) -> Unit) {
     LazyColumn(modifier = Modifier.fillMaxHeight()) {
         items(films) { item ->
             FilmItemComponent(
@@ -28,19 +28,20 @@ fun ContentComponent(films: List<FilmItem>, onItemClicked:(itemID: Long) -> Unit
 }
 
 @Composable
-private fun FilmItemComponent(item: FilmItem, onItemClicked: Any) {
+private fun FilmItemComponent(item: FilmItem, onItemClicked:(itemID: String) -> Unit) {
     Column(
         Modifier
             .fillMaxWidth()
             .padding(vertical = 8.dp, horizontal = 16.dp)
     ) {
-//        Image(painter = item.img, contentDescription = item.description )
         Column {
-            Text(text = item.geners[0])
-            Text(text = "${item.country.name}, ${item.releaseDate}")
+            if (item.genres.isNotEmpty()){
+                Text(text = item.genres[0])
+            }
+            Text(text = "${item.countryName}, ${item.releaseDate}")
             Text(text = item.name +"("+item.ageRating +")")
             Text(text = stringResource(id = R.string.film_title))
-            Text(text = "kinopoisk: " + item.userRatings.kinopoisk)
+            Text(text = "kinopoisk: " + item.kinopoiskRaiting)
         }
     }
 }

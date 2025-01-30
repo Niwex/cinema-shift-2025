@@ -1,15 +1,10 @@
 package com.example.cinemashift2025.addiche.data.repository
 
-import com.example.cinemashift2025.addiche.data.models.CountryModel
+import android.util.Log
 import com.example.cinemashift2025.addiche.data.models.FilmItemModel
-import com.example.cinemashift2025.addiche.data.models.FilmStafModel
-import com.example.cinemashift2025.addiche.data.models.UserRatingsModel
 import com.example.cinemashift2025.addiche.data.network.AfficheApi
 import com.example.cinemashift2025.addiche.domain.entity.AfficheException
-import com.example.cinemashift2025.addiche.domain.entity.Country
 import com.example.cinemashift2025.addiche.domain.entity.FilmItem
-import com.example.cinemashift2025.addiche.domain.entity.FilmStaf
-import com.example.cinemashift2025.addiche.domain.entity.UserRatings
 import com.example.cinemashift2025.addiche.domain.repository.AfficheRepository
 
 class AfficheRepositoryImpl(
@@ -19,7 +14,8 @@ class AfficheRepositoryImpl(
         try {
             val model = afficheApi.getAffiche()
             if (model.success) {
-                return model.films.map { film -> film.convert() }
+                val mapedModel = model.films.map { film -> film.convert() }
+                return mapedModel
             }
             else{
                 throw AfficheException.NetworkException(model.reason)
@@ -27,19 +23,12 @@ class AfficheRepositoryImpl(
 
         }
         catch (e: Exception){
+            Log.e("mytag", "getAffiche: ${e.message}", )
             throw AfficheException.UnhandledException()
         }
 
     }
 }
 
-//private fun AfficheModel.convert(): FilmItem =
-//    FilmItem(  )
 private fun FilmItemModel.convert(): FilmItem =
-    FilmItem(id, name, originalName, description, releaseDate, actors.map { it.convert() }, directors.map { it.convert() }, runtime, ageRating, geners ,userRatings.convert(), img, country.convert())
-private fun UserRatingsModel.convert(): UserRatings =
-    UserRatings(kinopoisk, imdb)
-private fun FilmStafModel.convert(): FilmStaf =
-    FilmStaf(id,professions,fullName)
-private fun CountryModel.convert(): Country =
-    Country(name,code,code2,id)
+    FilmItem(id, name, releaseDate, runtime, ageRating, genres.orEmpty() ,userRatings.kinopoisk.toFloatOrNull() ?: 0f, img, country.name)
