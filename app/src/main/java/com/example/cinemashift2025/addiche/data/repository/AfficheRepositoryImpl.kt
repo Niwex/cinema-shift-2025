@@ -31,4 +31,4 @@ class AfficheRepositoryImpl(
 }
 
 private fun FilmItemModel.convert(): FilmItem =
-    FilmItem(id, name, releaseDate, runtime, ageRating, genres.orEmpty() ,userRatings.kinopoisk.toFloatOrNull() ?: 0f, img, country.name)
+    FilmItem(id, name, releaseDate, runtime, ageRating, genres.orEmpty() ,userRatings.kinopoisk.toFloatOrNull() ?: 0f, img.drop(1), country.name)

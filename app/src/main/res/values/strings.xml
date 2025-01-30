@@ -8,4 +8,6 @@
 <!--    Affiche Screen-->
     <string name="affiche_title">Афиша</string>
     <string name="film_title">Фильм</string>
+    <string name="kinopoisk">Кинопоиск</string>
+    <string name="ditails">Подробнее</string>
 </resources>

@@ -55,7 +55,7 @@ dependencies {
 //    koin
 
     implementation(libs.koin.android)
-
+    implementation(libs.koin.androidx.compose)
 //    retrofit
     implementation (libs.retrofit)
     implementation (libs.converter.gson)
@@ -69,7 +69,7 @@ dependencies {
 //   coroutines
     implementation(libs.kotlinx.coroutines.android)
 
-    implementation(libs.koin.androidx.compose)
+    implementation (libs.compose.glide)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
