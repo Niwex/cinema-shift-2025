@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.jetbrains.kotlin.serialization)
 }
 
 android {
@@ -50,6 +51,25 @@ android {
 }
 
 dependencies {
+
+//    koin
+
+    implementation(libs.koin.android)
+
+//    retrofit
+    implementation (libs.retrofit)
+    implementation (libs.converter.gson)
+    implementation(libs.okhttp.logginginterceptor)
+
+//    навигация
+    implementation(libs.androidx.navigation.compose)
+
+//     Serialization
+    implementation(libs.kotlinx.serialization.json)
+//   coroutines
+    implementation(libs.kotlinx.coroutines.android)
+
+    implementation(libs.koin.androidx.compose)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
