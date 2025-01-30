@@ -1,6 +1,6 @@
 package com.example.cinemashift2025.addiche.presentation
 
-import com.example.cinemashift2025.addiche.domain.entity.FilmItem
+import com.example.cinemashift2025.shared.domain.entity.FilmItem
 
 interface AfficheState {
 

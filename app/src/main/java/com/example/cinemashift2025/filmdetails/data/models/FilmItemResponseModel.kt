@@ -1,10 +1,9 @@
-package com.example.cinemashift2025.addiche.data.models
+package com.example.cinemashift2025.filmdetails.data.models
 
 import com.example.cinemashift2025.shared.data.models.FilmItemModel
 
-data class AfficheModel(
+data class FilmItemResponseModel(
     val success: Boolean,
     val reason: String?,
-    val films: List<FilmItemModel>,
+    val film: FilmItemModel
 )
-

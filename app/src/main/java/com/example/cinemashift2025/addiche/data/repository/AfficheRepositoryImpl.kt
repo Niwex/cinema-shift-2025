@@ -1,11 +1,12 @@
 package com.example.cinemashift2025.addiche.data.repository
 
 import android.util.Log
-import com.example.cinemashift2025.addiche.data.models.FilmItemModel
+import com.example.cinemashift2025.shared.data.models.FilmItemModel
 import com.example.cinemashift2025.addiche.data.network.AfficheApi
 import com.example.cinemashift2025.addiche.domain.entity.AfficheException
-import com.example.cinemashift2025.addiche.domain.entity.FilmItem
+import com.example.cinemashift2025.shared.domain.entity.FilmItem
 import com.example.cinemashift2025.addiche.domain.repository.AfficheRepository
+import com.example.cinemashift2025.shared.data.converters.convertToDomain
 
 class AfficheRepositoryImpl(
     private val afficheApi: AfficheApi
@@ -14,7 +15,7 @@ class AfficheRepositoryImpl(
         try {
             val model = afficheApi.getAffiche()
             if (model.success) {
-                val mapedModel = model.films.map { film -> film.convert() }
+                val mapedModel = model.films.map { film -> film.convertToDomain() }
                 return mapedModel
             }
             else{
@@ -29,6 +30,3 @@ class AfficheRepositoryImpl(
 
     }
 }
-
-private fun FilmItemModel.convert(): FilmItem =
-    FilmItem(id, name, releaseDate, runtime, ageRating, genres.orEmpty() ,userRatings.kinopoisk.toFloatOrNull() ?: 0f, img.drop(1), country.name)

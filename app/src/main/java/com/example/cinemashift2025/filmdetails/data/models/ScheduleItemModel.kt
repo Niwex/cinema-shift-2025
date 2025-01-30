@@ -1,4 +1,4 @@
-package com.example.cinemashift2025.filmditails.data.models
+package com.example.cinemashift2025.filmdetails.data.models
 
 data class ScheduleItemModel (
     val date: String,
