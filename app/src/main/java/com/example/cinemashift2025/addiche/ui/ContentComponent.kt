@@ -17,6 +17,7 @@ import androidx.compose.ui.unit.dp
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.example.cinemashift2025.R
 import com.example.cinemashift2025.shared.domain.entity.FilmItem
+import com.example.cinemashift2025.shared.ui.FilmImagePosterCard
 
 
 @Composable

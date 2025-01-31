@@ -3,6 +3,7 @@ package com.example.cinemashift2025
 import android.app.Application
 import com.example.cinemashift2025.addiche.di.afficheModule
 import com.example.cinemashift2025.di.networkModule
+import com.example.cinemashift2025.filmdetails.di.filmDetailsModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -17,6 +18,7 @@ class MainApplication: Application() {
             modules(
                 networkModule,
                 afficheModule,
+                filmDetailsModule,
             )
         }
     }

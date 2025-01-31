@@ -10,4 +10,7 @@
     <string name="film_title">Фильм</string>
     <string name="kinopoisk">Кинопоиск</string>
     <string name="ditails">Подробнее</string>
+
+<!--    Film Details Screen-->
+    <string name="details_title">О фильме</string>
 </resources>
