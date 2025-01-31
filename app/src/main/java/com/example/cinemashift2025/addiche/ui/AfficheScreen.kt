@@ -16,6 +16,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.example.cinemashift2025.R
 import com.example.cinemashift2025.addiche.presentation.AfficheState
+import com.example.cinemashift2025.shared.ui.ErrorComponent
+import com.example.cinemashift2025.shared.ui.LoadingComponent
 
 
 @Composable

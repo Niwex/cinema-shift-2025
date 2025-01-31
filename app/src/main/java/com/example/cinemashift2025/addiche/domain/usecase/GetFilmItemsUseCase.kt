@@ -1,6 +1,6 @@
 package com.example.cinemashift2025.addiche.domain.usecase
 
-import com.example.cinemashift2025.addiche.domain.entity.FilmItem
+import com.example.cinemashift2025.shared.domain.entity.FilmItem
 import com.example.cinemashift2025.addiche.domain.repository.AfficheRepository
 
 class GetFilmItemsUseCase(

@@ -1,4 +1,4 @@
-package com.example.cinemashift2025.addiche.data.models
+package com.example.cinemashift2025.shared.data.models
 
 data class FilmItemModel(
     val id: String,
@@ -6,8 +6,8 @@ data class FilmItemModel(
     val originalName: String,
     val description: String,
     val releaseDate: String,
-    val actors: List<FilmStafModel>,
-    val directors: List<FilmStafModel>,
+    val actors: List<FilmStaffModel>,
+    val directors: List<FilmStaffModel>,
     val runtime: Int,
     val ageRating: String,
     val genres: List<String>?,

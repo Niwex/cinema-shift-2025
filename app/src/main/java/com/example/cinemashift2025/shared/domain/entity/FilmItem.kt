@@ -1,4 +1,4 @@
-package com.example.cinemashift2025.addiche.domain.entity
+package com.example.cinemashift2025.shared.domain.entity
 
 data class FilmItem(
     val id: String,
@@ -9,6 +9,7 @@ data class FilmItem(
     val genres: List<String> = listOf(),
     val kinopoiskRaiting: Float,
     val img: String,
-    val countryName: String
+    val countryName: String,
+    val description: String
 )
 

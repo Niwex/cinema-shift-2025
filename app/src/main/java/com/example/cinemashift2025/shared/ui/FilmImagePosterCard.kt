@@ -1,4 +1,4 @@
-package com.example.cinemashift2025.addiche.ui
+package com.example.cinemashift2025.shared.ui
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
